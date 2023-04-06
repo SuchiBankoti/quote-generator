@@ -1,11 +1,14 @@
 import React from "react";
+import SingleQuote from "./SingleQuote";
+import "./Mainpage.css";
+import Tags from "./Tags";
 
 const Mainpage = () => {
   return (
     <div className="Mainpage">
-      <div>Quote</div>
-      <div>Tags</div>
-      <div>Next Quote</div>
+      <SingleQuote />
+      <Tags />
+      <button>Next Quote</button>
     </div>
   );
 };

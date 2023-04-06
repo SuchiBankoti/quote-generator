@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#root {
+  --back-col: linear-gradient(120deg, #460e8a, #8638e5);
+}
+#root {
+  width: 100%;
+  height: 100vh;
+  background-image: var(--back-col);
+}

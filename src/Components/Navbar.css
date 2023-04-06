@@ -1,0 +1,16 @@
+.Navbar {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.link {
+  text-decoration: none;
+  color: white;
+  width: 200px;
+  margin: 50px;
+  font-size: 1.2rem;
+}
+.link:hover {
+  font-size: 1.75rem;
+}

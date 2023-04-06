@@ -1,0 +1,20 @@
+.Quote-box {
+  width: 500px;
+  height: 300px;
+  border-radius: 10px;
+  background-color: #f24822;
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+.bookmark-icon {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-size: 1.75rem;
+  color: white;
+}

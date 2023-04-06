@@ -1,12 +1,13 @@
 import React from "react";
 import Navbar from "./Navbar";
+import Mainpage from "./Mainpage";
 
-const Bookmarks = () => {
+const Home = () => {
   return (
     <div>
       <Navbar />
-      <div>Bookmarks</div>
+      <Mainpage />
     </div>
   );
 };
-export default Bookmarks;
+export default Home;

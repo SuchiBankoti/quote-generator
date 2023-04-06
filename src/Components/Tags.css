@@ -1,0 +1,14 @@
+.Tags-container {
+  width: 300px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  margin: 20px;
+}
+.Tags-container > select {
+  padding: 10px 45px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+}
