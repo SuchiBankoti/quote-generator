@@ -8,8 +8,8 @@ import axios from "axios";
 const Bookmarks = () => {
   const allBookmarks = useSelector((state) => state.bookmarks);
   const dispatch = useDispatch();
-  const ids = Object.keys({ ...localStorage });
   useEffect(() => {
+    const ids = Object.keys({ ...localStorage });
     const requests = ids.map((id) =>
       axios.get(`https://api.quotable.io/quotes/${id}`)
     );
@@ -31,7 +31,7 @@ const Bookmarks = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [dispatch]);
   return (
     <div>
       <Navbar />
