@@ -28,7 +28,9 @@ const Mainpage = () => {
     <div className="Mainpage">
       <SingleQuote quote={quote} />
       <Tags />
-      <button onClick={getQuote}>Next Quote</button>
+      <button onClick={() => getQuote("https://api.quotable.io/random")}>
+        Next Quote
+      </button>
     </div>
   );
 };

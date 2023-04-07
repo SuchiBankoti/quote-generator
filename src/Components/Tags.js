@@ -20,7 +20,6 @@ const Tags = () => {
 
   function updateTag() {
     if (myTag.current.value) {
-      console.log(myTag.current.value);
       dispatch({ type: "UPDATE_TAG", payload: myTag.current.value });
     }
   }

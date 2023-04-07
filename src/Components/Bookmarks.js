@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import "./Bookmarks.css";
 import Navbar from "./Navbar";
 import { useSelector, useDispatch } from "react-redux";
 import SingleQuote from "./SingleQuote";
@@ -31,13 +32,14 @@ const Bookmarks = () => {
         console.log(error);
       });
   }, []);
-
-  console.log(Object.values(allBookmarks));
-
   return (
     <div>
       <Navbar />
-      <div>Bookmarks</div>
+      <div className="bookmarks-container">
+        {Object.values(allBookmarks).map((ele, i) => (
+          <SingleQuote key={i} quote={ele} />
+        ))}
+      </div>
     </div>
   );
 };

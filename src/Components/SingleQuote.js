@@ -1,14 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaBookmark } from "react-icons/fa";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import "./SingleQuote.css";
 
 const SingleQuote = (props) => {
   const { quote } = props;
-  const dispatch = useDispatch();
+  const bookmarks = useSelector((state) => state.bookmarks);
   const [isBookmarked, setIsBookmarked] = useState(() =>
     JSON.parse(localStorage.getItem(`${quote.id}`)) ? true : false
   );
+  const dispatch = useDispatch();
+  useEffect(() => {
+    setIsBookmarked(() =>
+      JSON.parse(localStorage.getItem(`${quote.id}`)) ? true : false
+    );
+  }, [quote.id]);
+
   function addBookmark() {
     dispatch({
       type: "UPDATE_BOOKMARK",
@@ -20,9 +27,14 @@ const SingleQuote = (props) => {
     setIsBookmarked(true);
   }
   function removeBookmark() {
+    function deleteMark(id_val) {
+      const newBookmarks = { ...bookmarks };
+      delete newBookmarks[id_val];
+      return newBookmarks;
+    }
     dispatch({
-      type: "UPDATE_BOOKMARK",
-      payload: { [quote.id]: null },
+      type: "REMOVE_BOOKMARK",
+      payload: deleteMark(quote.id),
     });
     localStorage.removeItem(`${quote.id}`);
     setIsBookmarked(false);
@@ -30,7 +42,7 @@ const SingleQuote = (props) => {
   return (
     <div className="Quote-box">
       <div>{quote.content}</div>
-      <div>{quote.author}</div>
+      <div>-{quote.author}</div>
       <div>
         {isBookmarked ? (
           <FaBookmark

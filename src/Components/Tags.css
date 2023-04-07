@@ -12,3 +12,14 @@
   border-radius: 15px;
   font-size: 0.8rem;
 }
+@media (max-width: 800px) {
+  .Tags-container {
+    width: 150px;
+    height: 50px;
+  }
+  .Tags-container > select {
+    padding: 10px 25px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+  }
+}

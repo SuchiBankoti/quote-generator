@@ -9,6 +9,11 @@ const bookmarksReducer = (state = initialBookmarks, action) => {
         ...state,
         bookmarks: { ...state.bookmarks, ...action.payload },
       };
+    case "REMOVE_BOOKMARK":
+      return {
+        ...state,
+        bookmarks: { ...action.payload },
+      };
     case "UPDATE_TAG":
       return {
         ...state,
