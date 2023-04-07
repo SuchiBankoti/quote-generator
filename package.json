@@ -25,7 +25,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://username.github.io/quote-generator",
+  "homepage": "https://suchibankoti.github.io/quote-generator",
   "eslintConfig": {
     "extends": [
       "react-app",
